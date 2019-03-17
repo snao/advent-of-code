@@ -1,7 +1,3 @@
-with open("day1a_input.txt") as f:
-    inp = f.read()
-
-
 def day1a_parse(inp):
     inp = inp.strip().splitlines()
     inp = [int(x) for x in inp]
@@ -23,6 +19,8 @@ def day1b_twice(inp):
 
 
 if __name__ == "__main__":
+    with open("day1a_input.txt") as f:
+        inp = f.read()
     list = day1a_parse(inp)
     ans = day1b_twice(list)
     print(ans)

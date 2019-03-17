@@ -1,6 +1,3 @@
-with open("day2.txt") as f:
-    inp = f.read().strip().splitlines()
-
 def parse_1(line):
     chars = [0] * 26
     for letter in line:
@@ -24,6 +21,8 @@ def parse_2(line):
 
 
 if __name__ == "__main__":
+    with open("day2.txt") as f:
+        inp = f.read().strip().splitlines()
     twice = 0
     thrice = 0
     for lines in inp:
