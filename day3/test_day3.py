@@ -10,7 +10,7 @@ def test_fabric_chope():
     empty_array = np.zeros((3, 3))
     coords = [1, 0, 1, 2]
     ans = fabric_chope(empty_array, coords)
-    assert ans == np.array([[0, 1, 0], [0, 1, 0], [0, 0, 0]])
+    assert np.all(ans == np.array([[0, 1, 0], [0, 1, 0], [0, 0, 0]]))
 
 
 def test_check_chope():
