@@ -63,11 +63,12 @@ if __name__ == "__main__":
                     guard_table[guard_id] = current_day
                 guard_id = re.findall(r'\d+', line[1])[0]
                 current_day = np.zeros(60)
-        if action[1] == 0:
-            sleep_time = action[0]
-        elif action[1] == 1:
-            wake_time = action[0]
-            current_day = update_current_day(current_day, sleep_time, wake_time)
+        else:
+            if action[1] == 1:
+                sleep_time = action[0]
+            elif action[1] == 0:
+                wake_time = action[0]
+                current_day = update_current_day(current_day, sleep_time, wake_time)
     for id in guard_table:
         guard_sleep_total[id] = np.sum(guard_table[id])
     sleepiest_guard = max(guard_sleep_total.keys(), key=lambda k: guard_sleep_total[k])
