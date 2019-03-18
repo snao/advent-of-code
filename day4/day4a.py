@@ -29,7 +29,7 @@ def update_current_day(current_day, sleep_time, wake_time):
 def sleepiest_minute(array):
     sleepiest_index = 0
     sleepiest_minute = 0
-    for i in range(0, np.shape(array)[1] - 1):
+    for i in range(0, np.shape(array)[1]):
         current_minute = np.sum(array[:, i])
         print(current_minute)
         if current_minute > sleepiest_minute:

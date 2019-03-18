@@ -25,4 +25,4 @@ def test_update_current_day():
 def test_sleepiest_minute():
     array = np.array([[0, 1, 0], [0, 1, 1], [1, 1, 0], [0, 1, 7]])
     ans = sleepiest_minute(array)
-    assert ans == 1
+    assert ans == 2
