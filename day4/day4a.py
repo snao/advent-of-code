@@ -45,10 +45,12 @@ if __name__ == "__main__":
     guard_table = dict()
     guard_sleep_total = dict()
     guard_id = 0
+
     for line in inp:
         parsed = parse_input(line)
         entries.append(parsed)
     entries.sort()
+
     for line in entries:
         action = parse_action(line)
         if "Guard" in line[1]:
@@ -69,8 +71,10 @@ if __name__ == "__main__":
             elif action[1] == 0:
                 wake_time = action[0]
                 current_day = update_current_day(current_day, sleep_time, wake_time)
+
     for id in guard_table:
         guard_sleep_total[id] = np.sum(guard_table[id])
+
     sleepiest_guard = max(guard_sleep_total.keys(), key=lambda k: guard_sleep_total[k])
     print(guard_sleep_total)
     print(sleepiest_guard)
